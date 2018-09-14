@@ -2,6 +2,9 @@
 
 AuthHeaderUpdater is a Burp extension that allows you to specify the Authentication: Bearer header token value that is used during scanning.
 
+### Screenshot
+![Auth Header Updater] (https://www.chs.us/images/serve.php?img=authheaderupdater)
+
 ### Installing
 
 Go to Extender Tab -> Add.  Specify the jar file.  Click Next and then Close.  Notice the new "Auth Header Updater Tab"
