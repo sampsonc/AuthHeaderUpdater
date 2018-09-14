@@ -31,7 +31,7 @@ Uncheck "Enabled" to disable the extension.
 
 ## Authors
 
-* **[Carl Sampson](https://www.chs.us)** -  [@chs](https://twitter.com/chs)
+* **Carl Sampson** -  [@chs](https://twitter.com/chs)
 * **Jesse Kinser** -  [@securitybites](https://twitter.com/securitybites)
 
 ## License
