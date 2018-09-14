@@ -24,7 +24,7 @@ Authentication: Bearer <value from the extension>
 
 while doing a scan.  
 
-Uncheck "Enabled" to disable the extension
+Uncheck "Enabled" to disable the extension.
 
 ## Authors
 
