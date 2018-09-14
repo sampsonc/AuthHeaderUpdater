@@ -33,6 +33,8 @@ Uncheck "Enabled" to disable the extension.
 
 * **[Carl Sampson](https://www.chs.us)** -  [@chs](https://twitter.com/chs)
 
+See also the list of [contributors](https://github.com/authheaderupdater/contributors) who participated in this project.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
