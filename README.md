@@ -1,3 +1,5 @@
+![AuthHeaderUpdater](https://ihackthings.online/content/images/2018/09/logo.png)
+
 # AuthHeaderUpdater
 
 AuthHeaderUpdater is a Burp extension that allows you to specify the Authentication: Bearer header token value that is used during scanning.
@@ -13,13 +15,13 @@ Go to Extender Tab -> Add.  Specify the jar file.  Click Next and then Close.  N
 
 Specify the new token value in the "Auth Bearer Token" text box and click "Enabled".  
 
-It will then replace 
+It will then replace
 
 ```
 Authentication: Bearer <token>
 ```
 
-with 
+with
 
 ```
 Authentication: Bearer <value from the extension>
@@ -37,6 +39,3 @@ Uncheck "Enabled" to disable the extension.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-
-
