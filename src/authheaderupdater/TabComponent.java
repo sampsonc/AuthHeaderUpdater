@@ -78,7 +78,7 @@ public class TabComponent extends JPanel
         this.tokenLabel.setText("Auth Bearer Token: ");
         this.tokenLabel.setAlignmentX(LEFT_ALIGNMENT);
         
-        authToken.setLineWrap(true);
+        this.authToken.setLineWrap(true);
         
         JPanel tokenPanel = new JPanel(new FlowLayout());
         tokenPanel.add(tokenLabel);
