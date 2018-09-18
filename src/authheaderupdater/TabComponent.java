@@ -38,63 +38,62 @@ public class TabComponent extends JPanel
 
     IBurpExtenderCallbacks callbacks;
     BurpExtender extender;
-    final private JCheckBox jCheckBoxEnabled;
-    final private JTextArea jAuthToken;
-    final private JLabel jLabelHeader;
-    final private JLabel jLabelToken;
+    final private JCheckBox debug;
+    final private JTextArea authToken;
+    final private JLabel headerLabel;
+    final private JLabel tokenLabel;
 
     public TabComponent(IBurpExtenderCallbacks callbacks, BurpExtender extender)
     {
         this.callbacks = callbacks;
         this.extender = extender;
 
-        this.jLabelHeader = new JLabel();
-        this.jCheckBoxEnabled = new JCheckBox();
-        this.jAuthToken = new JTextArea(5,40);
-        this.jLabelToken = new JLabel();
+        this.headerLabel = new JLabel();
+        this.debug = new JCheckBox();
+        this.authToken = new JTextArea(5,40);
+        this.tokenLabel = new JLabel();
         
         initComponents();
 
-        this.callbacks.customizeUiComponent(this.jCheckBoxEnabled);
-        this.callbacks.customizeUiComponent(this.jAuthToken);
-        this.callbacks.customizeUiComponent(this.jLabelHeader);
-        this.callbacks.customizeUiComponent(this.jLabelToken);
+        this.callbacks.customizeUiComponent(this.debug);
+        this.callbacks.customizeUiComponent(this.authToken);
+        this.callbacks.customizeUiComponent(this.headerLabel);
+        this.callbacks.customizeUiComponent(this.tokenLabel);
     }
 
     
     private void initComponents()
     {        
-        this.jLabelHeader.setFont(new Font("Tahoma", 1, 16));
-        this.jLabelHeader.setForeground(new Color(229, 137, 0));
-        this.jLabelHeader.setText("Auth Header Settings");
-        this.jLabelHeader.setAlignmentX(CENTER_ALIGNMENT);
+        this.headerLabel.setFont(new Font("Tahoma", 1, 16));
+        this.headerLabel.setForeground(new Color(229, 137, 0));
+        this.headerLabel.setText("Auth Header Settings");
+        this.headerLabel.setAlignmentX(CENTER_ALIGNMENT);
         
-        this.jCheckBoxEnabled.setSelected(false);
-        this.jCheckBoxEnabled.setText("Enabled");
-        this.jCheckBoxEnabled.setAlignmentX(CENTER_ALIGNMENT);
+        this.debug.setSelected(false);
+        this.debug.setText("Enabled");
+        this.debug.setAlignmentX(CENTER_ALIGNMENT);
 
-        jLabelToken.setFont(new Font("Tahoma", 1, 13));
-        jLabelToken.setForeground(new Color(229, 137, 0));
-        jLabelToken.setText("Auth Bearer Token: ");
-        jLabelToken.setAlignmentX(LEFT_ALIGNMENT);
+        this.tokenLabel.setFont(new Font("Tahoma", 1, 13));
+        this.tokenLabel.setForeground(new Color(229, 137, 0));
+        this.tokenLabel.setText("Auth Bearer Token: ");
+        this.tokenLabel.setAlignmentX(LEFT_ALIGNMENT);
         
-        jAuthToken.setLineWrap(true);
+        authToken.setLineWrap(true);
         
         JPanel tokenPanel = new JPanel(new FlowLayout());
-        tokenPanel.add(jLabelToken);
-        tokenPanel.add(jAuthToken);
+        tokenPanel.add(tokenLabel);
+        tokenPanel.add(authToken);
         
         JPanel panel = new JPanel();
         BoxLayout boxlayout = new BoxLayout(panel, BoxLayout.Y_AXIS);
         panel.setLayout(boxlayout);
 
-        
         //Add the items
-        panel.add(this.jLabelHeader);
+        panel.add(this.headerLabel);
         panel.add(new JLabel("  ")); 
         panel.add(tokenPanel);
         panel.add(new JLabel("  ")); 
-        panel.add(this.jCheckBoxEnabled);
+        panel.add(this.debug);
         this.add(panel);
 
     }
@@ -102,11 +101,11 @@ public class TabComponent extends JPanel
     @Override
     public boolean isEnabled()
     {
-        return jCheckBoxEnabled.isSelected();
+        return debug.isSelected();
     }
     
     public String getToken()
     {
-        return jAuthToken.getText();
+        return authToken.getText();
     }
 }
