@@ -38,7 +38,7 @@ public class TabComponent extends JPanel
 
     IBurpExtenderCallbacks callbacks;
     BurpExtender extender;
-    final private JCheckBox debug;
+    final private JCheckBox enabled;
     final private JTextArea authToken;
     final private JLabel headerLabel;
     final private JLabel tokenLabel;
@@ -49,13 +49,13 @@ public class TabComponent extends JPanel
         this.extender = extender;
 
         this.headerLabel = new JLabel();
-        this.debug = new JCheckBox();
+        this.enabled = new JCheckBox();
         this.authToken = new JTextArea(5,40);
         this.tokenLabel = new JLabel();
         
         initComponents();
 
-        this.callbacks.customizeUiComponent(this.debug);
+        this.callbacks.customizeUiComponent(this.enabled);
         this.callbacks.customizeUiComponent(this.authToken);
         this.callbacks.customizeUiComponent(this.headerLabel);
         this.callbacks.customizeUiComponent(this.tokenLabel);
@@ -69,9 +69,9 @@ public class TabComponent extends JPanel
         this.headerLabel.setText("Auth Header Settings");
         this.headerLabel.setAlignmentX(CENTER_ALIGNMENT);
         
-        this.debug.setSelected(false);
-        this.debug.setText("Enabled");
-        this.debug.setAlignmentX(CENTER_ALIGNMENT);
+        this.enabled.setSelected(false);
+        this.enabled.setText("Enabled");
+        this.enabled.setAlignmentX(CENTER_ALIGNMENT);
 
         this.tokenLabel.setFont(new Font("Tahoma", 1, 13));
         this.tokenLabel.setForeground(new Color(229, 137, 0));
@@ -93,7 +93,7 @@ public class TabComponent extends JPanel
         panel.add(new JLabel("  ")); 
         panel.add(tokenPanel);
         panel.add(new JLabel("  ")); 
-        panel.add(this.debug);
+        panel.add(this.enabled);
         this.add(panel);
 
     }
@@ -101,7 +101,7 @@ public class TabComponent extends JPanel
     @Override
     public boolean isEnabled()
     {
-        return debug.isSelected();
+        return enabled.isSelected();
     }
     
     public String getToken()
